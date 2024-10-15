@@ -1,12 +1,38 @@
 {
   "manifest_version": 3,
-  "name": "My Chrome Extension",
+  "name": "Fashion Expert",
   "version": "1.0",
-  "description": "A Chrome extension built with React",
+  "description": "A Chrome extension that detects fashion products on specific websites",
   "action": {
     "default_popup": "index.html",
     "default_icon": "icon.png"
   },
-  "permissions": []
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://www.zara.com/*",
+    "http://localhost:3000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.shop.mongo.com/*",
+        "https://www2.hm.com/*",
+        "https://www.zara.com/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "allowedSites.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
 }
-

@@ -18,6 +18,6 @@
     "dev": "vite",
     "build": "vite build && npm run copy-files",
     "preview": "vite preview",
-    "copy-files": "cp public/manifest.json public/icon*.png dist/"
+    "copy-files": "cp public/icon.png public/contentScript.js public/allowedSites.js dist/"
   }
 }
